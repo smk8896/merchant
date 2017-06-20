@@ -4,8 +4,8 @@ class Product < ApplicationRecord
 
   validates :name, :brand, :category, presence: true
   validates_uniqueness_of :name, scope: :brand_id
-  validates :price, numericality: true
-  validates :quantity, numericality: {only_integer: true}
+  validates_numericality_of :price, greater_than_or_equal_to: 0.01
+  validates_numericality_of :quantity, greater_than_or_equal_to: 0
   validates :brand_id, presence: true
 
   has_attached_file :avatar, styles: { medium: '300x300', thumb: '100x100>'},
