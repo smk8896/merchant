@@ -32,6 +32,8 @@ class Product < ApplicationRecord
       else
         errors.add(:base, 'Line Items Present')
         return false
+      end
+    end
 end
 
 # == Schema Information
