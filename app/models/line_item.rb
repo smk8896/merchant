@@ -7,7 +7,7 @@ end
 def total_price
   price * quantity
   end
-end
+
 
 # == Schema Information
 #
