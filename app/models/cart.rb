@@ -3,7 +3,7 @@ class Cart < ApplicationRecord
 
   def subtotal
     #SQL way (much faster)
-    line_items.select("SUM(quantity * price AS sum")[0].sum
+    line_items.select("SUM(quantity * price) AS sum")[0].sum
 
     #Ruby way
     # line_items.to_a.sum{|item| item.total }
